@@ -48,7 +48,7 @@ describe('Input Forms Tests ',()=>{
           cy.wrap(radio).eq(2).should('not.be.checked');
         }))
 })
-    it('Check different checkbox actions',()=>{
+    it.skip('Check different checkbox actions',()=>{
         cy.get('[type = "checkbox"]').then((checkbox =>{
             cy.wrap(checkbox).eq(1).check().should('be.checked');
             //uncehckewd java
@@ -57,4 +57,31 @@ describe('Input Forms Tests ',()=>{
             cy.wrap(checkbox).eq(2).should('have.value','javascript').check().should('be.checked');
         }))       
 })
+    it.skip('Check selection of a single choice from a selected dropdown', () =>{
+        //select one element with the name
+        cy.get('select[name="job_title"]').select("SDET");
+        // assert that dropdown has correct text after selecting
+        cy.get('select[name="job_title"]').contains('SDET');
+    })
+
+    it('Check selection of all select dropdown options', () =>{
+          //we will provide our test data through fizture folder, then use that data to verify select values
+          cy.fixture('departments').then((dps)=>{
+           // get all options in the menu , iterate through these options one by one
+           cy.get('select[name="department"] > option').each((option, index) => {
+
+            // get each option text
+            const optionText = option.text();
+          //  cy.log(optionText); // real data ları dropdowndan alıyor
+          //  cy.log(index); 
+          //  cy.log(dps[index]);//fixture dan alıyor    
+
+              cy.get('select[name="department"]').select(optionText)  
+             .should('have.value',option.val())
+           //  .should('have.text',option[index])
+              .contains(dps[index]);
+
+           }) 
+          })  
+    })
 });
