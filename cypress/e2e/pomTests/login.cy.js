@@ -33,5 +33,9 @@ it.skip('happy paty scenario with locators',()=>{
     cy.textExists('You logged into a secure area!');
     auth.logout();
  })
-
+ it('check invalid user credentials',()=>{
+    auth.login('invalidusername','invalidpassword');
+    // verify error message
+    cy.textExists('Your username is invalid!');
+ })
 })
