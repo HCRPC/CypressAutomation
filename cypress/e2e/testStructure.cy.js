@@ -15,7 +15,8 @@ describe('Context : My first tests',()=>{
     })
     it('Opening a web app', ()=>{
         cy.visit('/registration_form');
-      //  cy.get(':nth-child(9) > a').click();
+        cy.get(':nth-child(1) > .col-sm-5 > .form-control').click();
+       //cy.get(':nth-child(9) > a').click();
         //cy.get(':nth-child(4) > :nth-child(1) > a').click();
     })
     it('Test 2',()=>{
@@ -23,6 +24,7 @@ describe('Context : My first tests',()=>{
     })
     it('Test 3',()=>{
         expect(false).not.to.equal(true);
+        expect('haci').to.equal('haci');
     })
     it('Test 4',()=>{
         expect(5).to.equal(5);

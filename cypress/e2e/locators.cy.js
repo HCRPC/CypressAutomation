@@ -12,7 +12,7 @@ describe('Find or Get by Using Different Locators',()=>{
         cy.get("input[name='username']").type("CydeoStudent");// every statements create an object to be interacted
         //, and next command makes operation to the object created the previous statement
         // attribute name and value     
-        cy.get("[type = 'text']").clear();// clear what is typed
+        cy.get("[type = 'text']").clear();// clear what is typed- aynı yer username 
 
         //tag name
         cy.get("input").each((item, index, list)=>{

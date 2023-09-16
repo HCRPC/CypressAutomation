@@ -22,7 +22,7 @@ describe('how to make API testing using cypress',()=>{
           })
           let index = 0;
           cy.fixture('bookTitles').then((expectedBookTitle)=>{
-            expect(response.body.books[index].title.to.equal(expectedBookTitle[title])); //json la verify etti benim json boş
+            expect(response.body.books[index].title.to.equal(expectedBookTitle[index])); //json la verify etti benim json boş
             index ++;
           })
           
