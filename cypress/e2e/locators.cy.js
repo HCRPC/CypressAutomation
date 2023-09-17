@@ -15,20 +15,20 @@ describe('Find or Get by Using Different Locators',()=>{
         cy.get("[type = 'text']").clear();// clear what is typed- aynı yer username 
 
         //tag name
-        cy.get("input").each((item, index, list)=>{
+        cy.get("input").each((item, index, list)=>{  // localtor u input olan bircok element var 
             // assert the lengt is equal to 2
             expect(list).to.have.length(2); // explicir assertion
             expect(item).to.have.attr("type");
         })
 
         //attribute
-        cy.get('[type]')
+        cy.get('[type]');
 
         ///by class name 
-        cy.get('.btn.btn-primary')
+        cy.get('.btn.btn-primary');
 
         // by id
-       //  cy.get('wooden_spoon')//hash işaretini koyamıyoyum !!!!! wooden in basında olmalı
+         cy.get('wooden_spoon');//hash işaretini koyamıyoyum !!!!! wooden in basında olmalı
 
         //to use text in cypress, we have no xpath
           cy.get('button').should('contain','Login').click();   
@@ -49,7 +49,7 @@ describe('Find or Get by Using Different Locators',()=>{
         // Should assertion:  doest the assertion directly on the object itself
         cy.get('.btn.btn-primary').should('contain','Login').and('have.class','btn btn-primary');
        
-        // expect assertion :
+        // expect assertion : expiliict assertion
         cy.get('.btn.btn-primary').then((buttonElement)=>{
             expect(buttonElement).to.have.text('Login');
             expect(buttonElement).to.have.id('wooden_spoon');
