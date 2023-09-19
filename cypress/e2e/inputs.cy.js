@@ -54,7 +54,7 @@ describe('Input Forms Tests ',()=>{
             //uncehckewd java
             cy.wrap(checkbox).eq(1).uncheck().should('not.be.checked');
             // verify third one has a value Javascript and check and verify
-            cy.wrap(checkbox).eq(2).should('have.value','javascript').check().should('be.checked');
+            cy.wrap(checkbox).eq(2).should('have.value','javascript').check().should('be.checked'); // bu efsane neyi check edeceğini kontrol ediyorrr
         }))       
 })
     it.skip('Check selection of a single choice from a selected dropdown', () =>{
@@ -65,21 +65,21 @@ describe('Input Forms Tests ',()=>{
     })
 
     it('Check selection of all select dropdown options', () =>{
-          //we will provide our test data through fizture folder, then use that data to verify select values
-          cy.fixture('departments').then((dps)=>{
+          //we will provide our test data through fixture folder, then use that data to verify select values
+          cy.fixture('departments').then((departments)=>{
            // get all options in the menu , iterate through these options one by one
            cy.get('select[name="department"] > option').each((option, index) => {
-
+                // 10 eleman da burda şimdi
             // get each option text
-            const optionText = option.text();
+            const optionText = option.text();// tüm textleri aldı 10 tane
           //  cy.log(optionText); // real data ları dropdowndan alıyor
           //  cy.log(index); 
-          //  cy.log(dps[index]);//fixture dan alıyor    
+          //  cy.log(departments[index]);//fixture dan alıyor    
 
               cy.get('select[name="department"]').select(optionText)  
              .should('have.value',option.val())
            //  .should('have.text',option[index])
-              .contains(dps[index]);
+              .contains(departments[index]);
 
            }) 
           })  

@@ -2,5 +2,11 @@
     "0":"Select your department/Ofiice",
     "1": "Department of engineering",
     "2":"Department of aggriculture",
-    "3":"Accounting office"
+    "3":"Accounting office",
+    "4":"Tresurer's Office",
+    "5":"MPDC",
+    "6":"MCTC",
+    "7":"MCR",
+    "8":"Mayor's Office",
+    "9":"Tourism Office"
 }
