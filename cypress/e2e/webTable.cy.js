@@ -48,7 +48,7 @@ describe('Cypress webtable tests', {baseUrl: 'https://demoqa.com'},()=>{
             //no data is visible is found or not
             cy.get('.rt-noData').should('contain','No rows found').should('be.visible');
     })
-    it('Check search for different age records',()=>{
+    it.skip('Check search for different age records',()=>{
         // age groups tobe search
         const ageGroup = [29,39,45,77];
         //for each age group same test scenario , wrap java script arrayini java scriptte kullalır jhale getiriyor-> çevir gibi
@@ -92,7 +92,7 @@ describe('Cypress webtable tests', {baseUrl: 'https://demoqa.com'},()=>{
           
     })
 })
-    it.skip('add new record - better approach', ()=>{
+    it('add new record - better approach', ()=>{
         cy.get('#addNewRecordButton').click();
         cy.fixture('user').then((user)=>{
             const columnNames = Object.keys(user.user1) //get user1 keys and stores into column names array

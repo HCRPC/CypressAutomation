@@ -9,7 +9,8 @@ describe('Alerts in Cypress test environment',{baseUrl: 'https://demoqa.com'},()
         cy.visit('/alerts');
     
     })
-    it.skip('check alert configuration', ()=>{
+    //test amaçlı yapıyoruz cypress alert olayını kendisi hallediyor aslında
+    it('check alert configuration', ()=>{
 
         /**
          * Browser  commands, window : alert, window : confirm , window : on , etc...

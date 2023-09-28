@@ -1,7 +1,7 @@
 import {auth} from '../../support/pages/auth';
 import { navigateTo } from '../../support/pages/navigation';
 const LoginLocators = require("../../support/pages/auth"); // böyle yaparsan hem auth hemde locators objesi methodalarına ulasabilirsin
-
+// yukarıdaki gibi çağırınca auth.js dekş tüm objelere ve o objelerin kullanacho methodlara ulaşabilir
 
 describe('Auth : login user with different ways', ()=>{
 // navigaton to test page
@@ -28,11 +28,13 @@ it.skip('happy paty scenario with locators',()=>{
     LoginLocators.locators.userName.type(user.user2.username);
     LoginLocators.locators.password.type(user.user2.password);
     LoginLocators.locators.submit.click();
+    
     })
     // lets call our custom command to verfiy the textx
     cy.textExists('You logged into a secure area!');
     auth.logout();
  })
+ //negative
  it('check invalid user credentials',()=>{
     auth.login('invalidusername','invalidpassword');
     // verify error message
