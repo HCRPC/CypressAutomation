@@ -6,10 +6,13 @@ module.exports = defineConfig({
     env:{
       login :"/login",
       apiURL :"https://demoqa.com",
-      apiBooks:"/BookStore/v1/Books"
+      apiBooks:"/BookStore/v1/Books",
+      generateUser : "/Account/v1/User",
+      generateToken : "/Account/v1/GenerateToken",
+      loginAPI :"/Account/v1/Login"
     },
     video :false,
-    retries: 0, //if it 2 , after fails it should run extra 2 times
+    retries: 1, //if it 2 , after fails it should run extra 2 times
     defaultCommandTimeout: 5000, // bu bekleme süresi bir elemente tıkladığında visible olması bekleme süresi
     viewportHeight: 800,
     viewportWidth: 1200,
